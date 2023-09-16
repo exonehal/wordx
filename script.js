@@ -5,6 +5,7 @@ function onDOMContentLoaded(evt) {
 	textarea.placeholder = "Start typing or paste your text in this field, and your text analysis will be displayed at the bottom.";
 
 	textarea.addEventListener("input", onTextChange);
+	textarea.textContent = textStore("get");
 	textarea.style.display = "unset";
 }
 
@@ -26,4 +27,29 @@ function onTextChange(em) {
 
 	const readingTime = txt.split(/\s+/).length;
 	reading.textContent = `${txt.length === 0 ? 0 : readingTime / 200} min`;
+
+	textStore("set", txt);
+}
+
+function textStore(o, txt) {
+	const store = localStorage;
+
+	if (o === "get") return store.getItem("text");
+	if (o === "set") return store.setItem("text", txt);
+
+	return "";
+}
+
+function clearInsights() {
+	document.getElementById("chars-t").textContent = "Character: 0";
+	document.getElementById("words-t").textContent = "Word: 0";
+	document.getElementById("paras-t").textContent = "Paragraph: 0";
+	document.getElementById("reading-t").textContent = "Reading Time: 0 min";
+}
+
+function resetButton() {
+	document.getElementById("box").value = "";
+	
+	clearInsights();
+	textStore("set", "");
 }

@@ -24,3 +24,19 @@
     resize: none;
     display: none;
 }
+
+.btn-group {
+    margin-top: 15px;
+}
+
+.btn-group button {
+    padding: 9px;
+    border: 1px solid #aa8181;
+    color: white;
+    font-size: 16px;
+}
+
+.btn-group button[id="reset"] {
+    background-color: #fd502b;
+    cursor: pointer;
+}
