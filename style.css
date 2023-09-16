@@ -40,3 +40,8 @@
     background-color: #fd502b;
     cursor: pointer;
 }
+
+.btn-group button[id="download"] {
+    background-color: #3f3f69;
+    cursor: pointer;
+}

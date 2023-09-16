@@ -53,3 +53,18 @@ function resetButton() {
 	clearInsights();
 	textStore("set", "");
 }
+
+function downloadButton() {
+	const text = document.getElementById("box").value;
+	if (text.length < 1) return;
+
+	const blob = new Blob([text], { type: "text/plain"});
+	const url = window.URL.createObjectURL(blob);
+
+	const a = document.createElement("a");
+	a.href = url;
+	a.download = "Wordx.txt";
+
+	a.click();
+	window.URL.revokeObjectURL(url);
+}
