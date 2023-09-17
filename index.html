@@ -10,10 +10,16 @@
 	<title>Wordx - Elevate Your Writing with Simple Analysis</title>
 
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
+	<nav class="navbar bg-body-tertiary">
+		<div class="container-fluid">
+			<a class="navbar-brand">Wordx</a>
+		</div>
+	</nav>
+
 	<div id="container">
-		<h1>Wordx</h1>
 		<textarea id="box"></textarea>
 		<p>
 			<span id="chars-t">Character: 0</span>
@@ -25,12 +31,13 @@
 			<span id="reading-t">Reading Time: 0 min</span>
 		</p>
 
-		<div class="btn-group">
-			<button onclick="resetButton()" id="reset">Reset</button>
-			<button onclick="downloadButton()" id="download">Download</button>
+		<div class="btn-group" role="group">
+			<button type="button" class="btn btn-danger mx-2" onclick="resetButton()">Reset</button>
+			<button type="button" class="btn btn-success" onclick="downloadButton()">Download</button>
 		</div>
 	</div>
 
 	<script type="text/javascript" src="script.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
